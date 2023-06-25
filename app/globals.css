@@ -8,9 +8,9 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-li {
+/* li {
   list-style: none;
-}
+} */
 
 /* @media (prefers-color-scheme: dark) {
   :root {
