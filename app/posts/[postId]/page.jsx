@@ -6,18 +6,18 @@ import Link from 'next/link';
 import 'highlight.js/styles/github-dark.css'; //get styles from node_modules folder under 'highlight.js'
 
 // this line of code will not cache any data
-export const revalidate = 0;
+export const revalidate = 86400;
 
 // this function should always return an array of objects!
-// export async function generateStaticParams() {
-//   const posts = await getPostsMeta(); //deduped
+export async function generateStaticParams() {
+  const posts = await getPostsMeta(); //deduped
 
-//   if (!posts) return [];
+  if (!posts) return [];
 
-//   return posts.map((post) => ({
-//     postId: post.id,
-//   }));
-// }
+  return posts.map((post) => ({
+    postId: post.id,
+  }));
+}
 
 export async function generateMetadata({ params: { postId } }) {
   const post = await getPostByName(`${postId}.mdx`); //deduped
@@ -39,8 +39,6 @@ export default async function PostPage({ params: { postId } }) {
   if (!post) notFound();
 
   const { meta, content } = post;
-
-  console.log(content);
 
   const pubDate = getFormattedDate(meta.date);
 

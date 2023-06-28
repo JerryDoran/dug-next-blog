@@ -2,7 +2,7 @@ import Link from 'next/link';
 import ProfilePicture from './components/ProfilePicture';
 import Posts from './components/Posts';
 
-export const revalidate = 10; //86400 seconds is more typical and is equal to 1 day
+export const revalidate = 86400; //86400 seconds is more typical and is equal to 1 day
 
 export default function HomePage() {
   return (

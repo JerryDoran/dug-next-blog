@@ -2,19 +2,19 @@ import { getPostsMeta } from '@/lib/posts';
 import ListItem from '@/app/components/ListItem';
 import Link from 'next/link';
 
-export const revalidate = 0;
+export const revalidate = 86400;
 
 // this function should always return an array of objects!
 // this function will not work when revalidate is set to '0'
-// export async function generateStaticParams() {
-//   const posts = await getPostsMeta(); //this request will be deduped by Next JS
+export async function generateStaticParams() {
+  const posts = await getPostsMeta(); //this request will be deduped by Next JS
 
-//   if (!posts) return [];
+  if (!posts) return [];
 
-//   const tags = new Set(posts.map((post) => post.tags).flat());
+  const tags = new Set(posts.map((post) => post.tags).flat());
 
-//   return Array.from(tags).map((tag) => ({ tag }));
-// }
+  return Array.from(tags).map((tag) => ({ tag }));
+}
 
 export function generateMetadata({ params: { tag } }) {
   return {
