@@ -8,9 +8,8 @@ export default async function Posts() {
     return <p className='mt-10 text-center'>Sorry, no posts available</p>;
   }
   return (
-    <section className='mt-6 mx-auto max-w-2xl'>
-      <h2 className='text-4xl font-bold dark:text-white/90'>Blogs</h2>
-      <ul className='w-full list-none'>
+    <section className=''>
+      <ul className='w-full list-none grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3'>
         {posts.map((post) => (
           <ListItem key={post.id} post={post} />
         ))}
