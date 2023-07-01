@@ -4,7 +4,7 @@ export const revalidate = 86400; //86400 seconds is more typical and is equal to
 
 export default function HomePage() {
   return (
-    <div className='dark:text-slate-200'>
+    <div className='dark:text-neutral-300'>
       <h1 className='text-2xl font-semibold mb-4'>Recent Notes</h1>
       <Posts />
     </div>

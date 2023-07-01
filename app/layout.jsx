@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
         <meta name='author' content='Jerry Doran' />
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
       </Head>
-      <body className='dark:bg-[#20222a] text-slate-900'>
+      <body className='dark:bg-[#20222a] text-slate-900 bg-slate-200'>
         <ThemeProvider attribute='class'>
           <Header />
           <div className='mx-auto max-w-4xl px-6'>{children}</div>

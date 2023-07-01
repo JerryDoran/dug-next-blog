@@ -62,7 +62,11 @@ export default function Header() {
   }
 
   return (
-    <header className={`${isScroll && 'dark:bg-[#20222a]/90 sticky top-0 '}`}>
+    <header
+      className={`${
+        isScroll && 'dark:bg-[#20222a]/90 bg-slate-300/90 sticky top-0 '
+      }`}
+    >
       <nav className='py-8 flex mx-auto px-6 max-w-4xl items-center'>
         <div className='flex space-x-6 dark:text-white'>
           <Link

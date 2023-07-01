@@ -43,25 +43,29 @@ export default async function PostPage({ params: { postId } }) {
   const pubDate = getFormattedDate(meta.date);
 
   const tags = meta.tags.map((tag, i) => (
-    <Link key={i} href={`/tags/${tag}`}>
+    <Link
+      key={i}
+      href={`/tags/${tag}`}
+      className='dark:bg-slate-700 bg-slate-300 px-2 py-1 rounded-xl text-xs'
+    >
       {tag}
     </Link>
   ));
 
   return (
-    <>
+    <div className='dark:text-slate-300'>
       <h2 className='text-3xl mt-4 mb-0'>{meta.title}</h2>
-      <p className='mt-0 text-sm'>{pubDate}</p>
-      <article>{content}</article>
+      <p className='mt-2 text-sm'>{pubDate}</p>
+      <article className='my-6'>{content}</article>
       <section>
-        <h3>Related:</h3>
+        <h3 className='mb-2'>Related:</h3>
         <div className='flex flex-row gap-4'>{tags}</div>
       </section>
-      <p className='mb-10'>
+      <p className='my-10'>
         <Link href='/' className='flex items-center justify-center gap-x-2'>
           <FaArrowLeft /> Back to home
         </Link>
       </p>
-    </>
+    </div>
   );
 }
