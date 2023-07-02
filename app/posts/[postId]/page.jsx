@@ -53,7 +53,7 @@ export default async function PostPage({ params: { postId } }) {
   ));
 
   return (
-    <div className='dark:text-slate-300'>
+    <div className='dark:text-slate-300 prose prose-xl prose-slate dark:prose-invert'>
       <h2 className='text-3xl mt-4 mb-0'>{meta.title}</h2>
       <p className='mt-2 text-sm'>{pubDate}</p>
       <article className='my-6'>{content}</article>

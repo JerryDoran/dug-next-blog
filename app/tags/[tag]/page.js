@@ -41,15 +41,17 @@ export default async function TagPostList({ params: { tag } }) {
   }
 
   return (
-    <>
-      <h2 className='text-3xl mt-4 mb=0'>Results for: #{tag}</h2>
-      <section className='mt-6 mx-auto max-w-2xl'>
-        <ul className='w-full list-none p-0'>
+    <div className='w-full'>
+      <h2 className='text-3xl prose dark:prose-invert mt-4 mb=0'>
+        Results for: #{tag}
+      </h2>
+      <section className='mt-6 mx-auto '>
+        <ul className='w-full list-none p-0 max-w-4xl grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3'>
           {tagPosts.map((post) => (
             <ListItem key={post.id} post={post} />
           ))}
         </ul>
       </section>
-    </>
+    </div>
   );
 }
