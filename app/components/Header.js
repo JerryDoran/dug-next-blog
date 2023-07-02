@@ -44,16 +44,16 @@ export default function Header() {
 
     if (currentTheme === 'dark') {
       return (
-        <SunIcon
-          className='w-9 h-9 text-yellow-500 transition p-1.5 rounded hover:bg-slate-700'
+        <MoonIcon
+          className='w-9 h-9 p-1.5 transition rounded text-slate-100 hover:bg-slate-700'
           role='button'
           onClick={() => setTheme('light')}
         />
       );
     } else {
       return (
-        <MoonIcon
-          className='w-9 h-9 p-1.5 transition rounded hover:bg-slate-100'
+        <SunIcon
+          className='w-9 h-9 text-yellow-500 transition p-1.5 rounded hover:bg-slate-400 '
           role='button'
           onClick={() => setTheme('dark')}
         />
