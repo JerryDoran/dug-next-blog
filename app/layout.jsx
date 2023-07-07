@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
       <body className='dark:bg-slate-900 text-slate-900 bg-slate-300'>
         <ThemeProvider attribute='class'>
           <Header />
-          <main className='mx-auto max-w-4xl px-6'>{children}</main>
+          <main className='mx-auto max-w-5xl px-6'>{children}</main>
           <Footer />
         </ThemeProvider>
       </body>
